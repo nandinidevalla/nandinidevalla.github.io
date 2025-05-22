@@ -1,4 +1,4 @@
-/* ========== Base Reset ========== */
+/* ========== Reset ========== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +7,7 @@
   
   body {
     font-family: 'Inter', sans-serif;
-    background-color: #f5f3f0;
+    background: linear-gradient(to bottom right, #f6e7e3, #e9f0e8, #e9e6f5, #ddeaf3);
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -15,12 +15,13 @@
   
   /* ========== Navbar ========== */
   .navbar {
-    background-color: #ede6dd;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   }
   
   .nav-list {
@@ -28,6 +29,7 @@
     justify-content: center;
     list-style: none;
     gap: 2rem;
+    flex-wrap: wrap;
   }
   
   .nav-list a {
@@ -39,7 +41,63 @@
   }
   
   .nav-list a:hover {
-    color: #8d8071;
+    color: #7e6d5e;
+  }
+  
+  /* ========== Hero Split ========== */
+  .hero-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    min-height: 90vh;
+  }
+  
+  .hero-left, .hero-right {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .photo-placeholder {
+    width: 220px;
+    height: 220px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-right h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #2d2d2d;
+  }
+  
+  .hero-right p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #4e4e4e;
+  }
+  
+  .cta-button {
+    padding: 0.7rem 1.5rem;
+    background-color: #7e6d5e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #a58f7e;
   }
   
   /* ========== Sections ========== */
@@ -69,55 +127,32 @@
     margin-bottom: 0.8rem;
   }
   
-  /* ========== Hero Section ========== */
-  .home {
-    background-color: #c5b9ac;
-    color: #ffffff;
-    text-align: center;
-    padding: 5rem 2rem;
-  }
-  
-  .intro-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .intro-text p {
-    font-size: 1.2rem;
-  }
-  
-  /* Placeholder for profile image */
-  .profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 2rem;
-  }
-  
   /* ========== Links ========== */
   a {
     color: #3e3e3e;
   }
   
   a:hover {
-    color: #8d8071;
+    color: #7e6d5e;
     text-decoration: underline;
   }
   
   /* ========== Responsive ========== */
   @media (max-width: 768px) {
+    .hero-split {
+      flex-direction: column;
+      padding: 3rem 1rem;
+    }
+  
+    .photo-placeholder {
+      margin-bottom: 2rem;
+    }
+  
     .nav-list {
-      flex-wrap: wrap;
       gap: 1rem;
     }
   
-    .section {
-      margin: 2rem 1rem;
-      padding: 1.5rem;
-    }
-  
-    .intro-text h1 {
+    .hero-right h1 {
       font-size: 2rem;
     }
   }  
