@@ -2,133 +2,82 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nandini Priya Devalla | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="images/profile.jpg" alt="Nandini Priya Devalla" class="profile-img">
-        <h1>Nandini Priya</h1>
-        <p>Student | Aspiring Developer</p>
+  <header class="navbar">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills & Certifications</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section home">
+      <div class="intro-text">
+        <h1>Nandini Priya Devalla</h1>
+        <p>Full-Stack Developer | Business Analytics | AI & Data Enthusiast</p>
+        <!-- <img src="images/profile.jpg" alt="Your photo" class="profile-pic" /> -->
       </div>
-      <nav class="nav">
-        <ul>
-          <li><a href="#hero"><i class="bi bi-house"></i> Home</a></li>
-          <li><a href="#about"><i class="bi bi-person"></i> About</a></li>
-          <li><a href="#education"><i class="bi bi-mortarboard"></i> Education</a></li>
-          <li><a href="#experience"><i class="bi bi-briefcase"></i> Experience</a></li>
-          <li><a href="#projects"><i class="bi bi-code-slash"></i> Projects</a></li>
-          <li><a href="#skills"><i class="bi bi-lightning-charge"></i> Skills</a></li>
-          <li><a href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
-    </aside>
+    </section>
 
-    <main class="content">
-      <section id="hero" class="section hero">
-        <h2>Hi, I'm Nandini Priya Devalla 👋</h2>
-        <p>A full-stack developer and MSBAIM graduate student passionate about AI, usable tools, and real-world impact</p>
-      </section>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to AI-powered systems. Currently pursuing an MS in Business Analytics & Information Management at Purdue, I focus on applied data science, generative AI, and building meaningful tech products.</p>
+    </section>
 
-      <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-          I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to AI-powered systems.
-          I'm currently pursuing a Master’s in Business Analytics and Information Management at Purdue, where I explore applied data science, generative AI, and human-centered tool design.
-        </p>
-        <p>
-          I enjoy bridging the gap between data and decisions — whether that means building LLM-powered email assistants or helping courts apply AI responsibly.
-          My technical stack includes Java, Python, Angular, React, Spring Boot, SQL, MongoDB, and more.
-        </p>
-        <ul>
-          <li><strong>Email:</strong> ndevalla@purdue.edu</li>
-          <li><strong>Location:</strong> Lafayette, IN</li>
-          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nandini-devalla" target="_blank">linkedin.com/in/nandini-devalla</a></li>
-        </ul>
-      </section>
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>Purdue University</strong><br />
+          MS in Business Analytics & Information Management (2023–2025)
+        </li>
+        <li>
+          <strong>Chaitanya Bharathi Institute of Technology</strong><br />
+          BE in Computer Science (2017–2021)
+        </li>
+      </ul>
+    </section>
 
-      <section id="education" class="section">
-        <h2>Education</h2>
+    <section id="experience" class="section">
+      <h2>Professional Experience</h2>
+      <ul>
+        <li>
+          <strong>Indiana Supreme Court – AI R&D Intern</strong><br />
+          Jan 2025 – Apr 2025
+        </li>
+        <li>
+          <strong>GAP Inc. – Software Engineer</strong><br />
+          Jul 2021 – Jul 2023
+        </li>
+      </ul>
+    </section>
 
-        <div class="edu-item">
-          <h3>Purdue University – Daniels School of Business</h3>
-          <p><strong>Master of Science in Business Analytics & Information Management</strong><br>
-          Aug 2023 – Aug 2025 | West Lafayette, IN</p>
-          <ul>
-            <li>Graduate Teaching Assistant – Advanced Databases, Business Analytics</li>
-            <li>Recipient of Krannert Scholarship</li>
-          </ul>
-        </div>
+    <section id="skills" class="section">
+      <h2>Skills & Certifications</h2>
+      <p>Java, Spring Boot, Angular, React, SQL, Python, MongoDB, GitHub, MLflow, Spark, Jenkins, Azure, LangChain</p>
+    </section>
 
-        <div class="edu-item">
-          <h3>Chaitanya Bharathi Institute of Technology</h3>
-          <p><strong>Bachelor of Engineering in Computer Science</strong><br>
-          Jun 2017 – Jun 2021 | Hyderabad, India</p>
-          <ul>
-            <li>Graduated with GPA: 4.0/4.0</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-
-        <div class="exp-item">
-          <h3>AI Research & Development Intern</h3>
-          <p><strong>Indiana Supreme Court – Office of Judicial Administration</strong><br>
-          Jan 2025 – Apr 2025 | Indianapolis, IN</p>
-          <ul>
-            <li>Developed training materials and documentation on ethical AI in case management</li>
-            <li>Contributed strategic recommendations for responsible AI integration in state courts</li>
-          </ul>
-        </div>
-
-        <div class="exp-item">
-          <h3>Software Engineer</h3>
-          <p><strong>GAP Inc.</strong><br>
-          Jul 2021 – Jul 2023 | Hyderabad, India</p>
-          <ul>
-            <li>Built full-stack pricing systems across GAP brands using Java, Spring Boot, Angular</li>
-            <li>Maintained backend REST APIs and managed SQL/MongoDB data pipelines</li>
-            <li>Improved system uptime and deployment efficiency with CI/CD pipelines via Jenkins</li>
-            <li>Developed internal dashboards and alerts, reducing incident response time by 35%</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <h2>Projects</h2>
-        <p>Coming next! We’ll add project cards or a short list of academic/personal work here soon.</p>
-      </section>
-
-      <section id="skills" class="section">
-        <h2>Skills</h2>
-        <ul>
-          <li>Java, Spring Boot, REST APIs</li>
-          <li>JavaScript, TypeScript, HTML/CSS</li>
-          <li>Angular, React</li>
-          <li>SQL, MongoDB, Hive</li>
-          <li>Python, Pandas, Scikit-learn, Spark</li>
-          <li>LangChain, MLflow, Prompt Engineering</li>
-          <li>GitHub, Jenkins, Docker, Azure</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: ndevalla@purdue.edu</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/nandini-devalla" target="_blank">linkedin.com/in/nandini-devalla</a></p>
-      </section>
-
-    </main>
-  </div>
+    <section id="contact" class="section">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:ndevalla@purdue.edu">ndevalla@purdue.edu</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/nandini-devalla" target="_blank">nandini-devalla</a></p>
+    </section>
+  </main>
 </body>
 
 </html>
