@@ -1,171 +1,128 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  font-family: "Inter", sans-serif;
+html {
   scroll-behavior: smooth;
-  background: white;
 }
 
-.navbar {
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
   background-color: #fff;
-  padding: 1rem;
+  color: #333;
+}
+
+/* Sticky Nav */
+.navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  background-color: white;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.nav-list {
-  list-style: none;
+.nav-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  list-style: none;
+  gap: 15px;
 }
 
-.nav-list a {
-  background-color: #c4a77d;
-  color: #000;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
+.nav-links li a {
   text-decoration: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  background-color: #c6a87d;
+  color: black;
   border-radius: 20px;
 }
 
-.nav-list a:hover {
-  background-color: #b29469;
-}
-
-.hero-section {
-  height: 100vh;
+/* L-shaped Hero */
+#home {
   display: flex;
   flex-direction: column;
-}
-
-.hero-layout {
-  flex: 1;
-  display: flex;
-  height: 100%;
-}
-
-/* Left Gradient */
-.hero-left {
-  flex: 1;
-  background: linear-gradient(to bottom right, #f6e7e3, #e9f0e8, #e9e6f5, #ddeaf3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 
-.photo-ring {
-  width: 280px;
-  height: 280px;
-  border: 10px solid white;
-  border-radius: 50%;
-  background: transparent;
+.hero-wrapper {
+  display: flex;
+  height: 90vh;
+}
+
+.hero-left {
+  flex: 1;
+  background: linear-gradient(180deg, #fcebe3, #e6f5e9, #e8ecfd);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.photo-inner {
-  width: 180px;
-  height: 180px;
-  background-color: #d9d9d9;
-  border-radius: 50%;
-}
-
-/* Right Panel */
 .hero-right {
   flex: 2;
-  background: white;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 3rem;
+  padding: 40px;
 }
 
-.hero-right h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #2d2d2d;
+.profile-pic-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #ccc;
+  border: 10px solid white;
 }
 
-.hero-right p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: #555;
+/* Bottom gradient bar */
+.gradient-footer {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(90deg, #fcebe3, #e6f5e9, #e8ecfd);
 }
 
-.cta-button {
-  background-color: #7e6d5e;
+/* Section padding + prevent header cut-off */
+section {
+  padding: 100px 20px;
+  scroll-margin-top: 80px;
+}
+
+/* Headings */
+h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+/* Button */
+.button {
+  margin-top: 20px;
+  background-color: #7c6650;
   color: white;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border-radius: 6px;
+  padding: 12px 24px;
   text-decoration: none;
-  width: fit-content;
-}
-
-.cta-button:hover {
-  background-color: #a58f7e;
-}
-
-/* Other Sections */
-.main-sections {
-  background-color: white;
-}
-
-.section {
-  scroll-margin-top: 100px; /* Prevents header clipping on anchor nav */
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2c2c2c;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
-}
-
-.section ul {
-  margin-top: 1rem;
-  padding-left: 1.5rem;
-}
-
-.section ul li {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-layout {
+  .hero-wrapper {
     flex-direction: column;
+    height: auto;
   }
 
-  .hero-left,
-  .hero-right {
-    flex: unset;
+  .hero-left, .hero-right {
+    flex: none;
     width: 100%;
-  }
-
-  .photo-ring {
-    margin: 2rem auto 0 auto;
-  }
-
-  .hero-right {
-    align-items: center;
     text-align: center;
-    padding: 2rem;
+  }
+
+  .profile-pic-placeholder {
+    margin-top: 20px;
   }
 }
