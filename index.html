@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nandini Priya Devalla | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nandini Priya Devalla</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-
 <body>
-  <header class="navbar">
-    <nav>
-      <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills & Certifications</a></li>
-        <li><a href="#contact">Get in Touch</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <!-- Hero Split Layout -->
-    <section id="home" class="hero-split">
-      <div class="hero-left">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills & Certifications</a></li>
+      <li><a href="#contact">Get in Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- Full Layout -->
+  <main class="main-container">
+
+    <!-- Gradient background layers -->
+    <div class="gradient-left"></div>
+    <div class="gradient-footer"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
         <div class="photo-ring">
           <div class="photo-inner"></div>
         </div>
-      </div>
-      <div class="hero-right">
-        <h1>Nandini Priya Devalla</h1>
-        <p>Full-Stack Developer | Business Analytics | AI & Data Enthusiast</p>
-        <a href="#about" class="cta-button">Learn More</a>
+        <div class="hero-text">
+          <h1>Nandini Priya Devalla</h1>
+          <p>Full-Stack Developer | Business Analytics | AI & Data Enthusiast</p>
+          <a href="#about" class="cta-button">Learn More</a>
+        </div>
       </div>
     </section>
 
+    <!-- About Me -->
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to
-        AI-powered systems. Currently pursuing an MS in Business Analytics & Information Management at Purdue, I focus
-        on applied data science, generative AI, and building meaningful tech products.
+        I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to AI-powered systems. Currently pursuing an MS in Business Analytics & Information Management at Purdue, I focus on applied data science, generative AI, and building meaningful tech products.
       </p>
     </section>
 
+    <!-- Education -->
     <section id="education" class="section">
       <h2>Education</h2>
       <ul>
-        <li><strong>Purdue University</strong><br />MS in Business Analytics & Information Management (2023–2025)</li>
-        <li><strong>Chaitanya Bharathi Institute of Technology</strong><br />BE in Computer Science (2017–2021)</li>
+        <li><strong>Purdue University</strong><br>MS in Business Analytics & Information Management (2023–2025)</li>
+        <li><strong>Chaitanya Bharathi Institute of Technology</strong><br>BE in Computer Science (2017–2021)</li>
       </ul>
     </section>
 
+    <!-- Experience -->
     <section id="experience" class="section">
       <h2>Professional Experience</h2>
       <ul>
-        <li><strong>Indiana Supreme Court – AI R&D Intern</strong><br />Jan 2025 – Apr 2025</li>
-        <li><strong>GAP Inc. – Software Engineer</strong><br />Jul 2021 – Jul 2023</li>
+        <li><strong>Indiana Supreme Court – AI R&D Intern</strong><br>Jan 2025 – Apr 2025</li>
       </ul>
     </section>
 
+    <!-- Skills -->
     <section id="skills" class="section">
       <h2>Skills & Certifications</h2>
-      <p>
-        Java, Spring Boot, Angular, React, SQL, Python, MongoDB, GitHub, MLflow, Spark, Jenkins, Azure, LangChain
+      <ul>
+        <li>Java, Python, Spring Boot, React, SQL, MongoDB</li>
+        <li>AI/ML, Prompt Engineering, LangChain</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Get in Touch</h2>
+      <p>Email: <strong>ndevalla@purdue.edu</strong><br>
+         LinkedIn: <a href="https://linkedin.com/in/nandini-devalla" target="_blank">linkedin.com/in/nandini-devalla</a>
       </p>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Get in Touch</h2>
-      <p>Email: <a href="mailto:ndevalla@purdue.edu">ndevalla@purdue.edu</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/nandini-devalla" target="_blank">nandini-devalla</a></p>
-    </section>
   </main>
-</body>
 
+</body>
 </html>
