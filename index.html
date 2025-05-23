@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nandini Priya Devalla | Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
+
   <header class="navbar">
     <nav>
       <ul class="nav-list">
@@ -29,7 +23,8 @@
   </header>
 
   <main>
-    <!-- Hero Split Layout -->
+
+    <!-- Hero Section -->
     <section id="home" class="hero-split">
       <div class="hero-left">
         <div class="photo-ring">
@@ -43,10 +38,10 @@
       </div>
     </section>
 
+    <!-- Sections -->
     <section id="about" class="section">
       <h2>About Me</h2>
-      <p>
-        I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to
+      <p>I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to
         AI-powered systems. Currently pursuing an MS in Business Analytics & Information Management at Purdue, I focus
         on applied data science, generative AI, and building meaningful tech products.
       </p>
@@ -70,9 +65,7 @@
 
     <section id="skills" class="section">
       <h2>Skills & Certifications</h2>
-      <p>
-        Java, Spring Boot, Angular, React, SQL, Python, MongoDB, GitHub, MLflow, Spark, Jenkins, Azure, LangChain
-      </p>
+      <p>Java, Spring Boot, Angular, React, SQL, Python, MongoDB, GitHub, MLflow, Spark, Jenkins, Azure, LangChain</p>
     </section>
 
     <section id="contact" class="section">
@@ -80,7 +73,15 @@
       <p>Email: <a href="mailto:ndevalla@purdue.edu">ndevalla@purdue.edu</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/nandini-devalla" target="_blank">nandini-devalla</a></p>
     </section>
-  </main>
-</body>
 
+  </main>
+
+  <script>
+    // Remove #home on load if present
+    if (window.location.hash === "#home") {
+      history.replaceState(null, "", window.location.pathname);
+    }
+  </script>
+
+</body>
 </html>

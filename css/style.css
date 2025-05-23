@@ -12,25 +12,18 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Enable section snap behavior */
 html {
   scroll-snap-type: y mandatory;
 }
 
-/* Each section takes full screen height + snap */
 .section {
   scroll-snap-align: start;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  background-color: #fff;
 }
 
 .section h2 {
@@ -63,15 +56,15 @@ html {
 .nav-list {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   list-style: none;
+  flex-wrap: wrap;
   gap: 1.2rem;
 }
 
 .nav-list a {
   padding: 0.5rem 1rem;
   background-color: #c4a77d;
-  color: #000000;
+  color: #000;
   border-radius: 20px;
   font-weight: 700;
   text-decoration: none;
@@ -82,13 +75,13 @@ html {
   background-color: #a88964;
 }
 
-/* Hero layout (1/3 + 2/3 split) */
+/* Hero Layout */
 .hero-split {
   display: flex;
   min-height: 100vh;
 }
 
-/* Left = 1/3 */
+/* Left (1/3) */
 .hero-left {
   width: 33.333%;
   background: linear-gradient(to bottom right, #f6e7e3, #e9f0e8, #e9e6f5, #ddeaf3);
@@ -98,7 +91,7 @@ html {
   position: relative;
 }
 
-/* Right = 2/3 */
+/* Right (2/3) */
 .hero-right {
   width: 66.666%;
   background: white;
@@ -110,16 +103,14 @@ html {
   text-align: center;
 }
 
-/* Photo ring repositioned */
 .photo-ring {
   width: 320px;
   height: 320px;
   border: 12px solid white;
   border-radius: 50%;
-  background: transparent;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: absolute;
   left: 100%;
   transform: translateX(-50%);
@@ -165,8 +156,7 @@ html {
     flex-direction: column;
   }
 
-  .hero-left,
-  .hero-right {
+  .hero-left, .hero-right {
     width: 100%;
   }
 
