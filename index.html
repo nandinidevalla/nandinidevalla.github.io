@@ -4,84 +4,601 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nandini Priya Devalla | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --accent-pink: #e07ea4;
+      --accent-purple: #a084ca;
+      --text-dark: #1a1a1a;
+      --border-gold: #d4af37;
+      --bg-light: #f8f5ec;
+      --bg-strip: #e9e1d3;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    nav a:hover {
+      color: var(--accent-purple);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-family: 'Oswald', sans-serif;
+      color: var(--accent-pink);
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .container > div {
+      flex: 1 1 480px;
+      max-width: 48%;
+    }
+
+    .school-logo {
+      height: 40px;
+      width: auto;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .card {
+      flex: 1 1 400px;
+      border: 1px solid var(--border-gold);
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background-color: white;
+      color: var(--text-dark);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0.5rem;
+    }
+
+/* ... existing CSS ... */
+
+/* Enhanced Project Card Styling */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+
+    .project-card-container {
+      position: relative;
+      background-color: white;
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card-header img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background-color: var(--bg-strip);
+      border-radius: 15px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .read-more-toggle {
+      color: var(--accent-purple);
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .read-more-toggle:hover {
+      color: var(--accent-pink);
+    }
+
+    .read-more-toggle span {
+      margin-left: 6px;
+      transition: transform 0.3s;
+    }
+
+    .read-more-content {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .project-card-container.expanded .read-more-content {
+      display: block;
+    }
+
+    .project-card-container.expanded .read-more-toggle span {
+      transform: rotate(90deg);
+    }
+
+
+    .contact-icons img {
+      width: 40px;
+      margin: 0 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    
+
+
+/* Timeline Section: Work Experience */
+    .timeline-container {
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      border-left: 3px solid var(--accent-pink);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-date {
+      font-size: 0.95rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--accent-pink);
+    }
+
+    .timeline-content {
+      margin-left: 0.5rem;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .timeline-logo {
+      height: 32px;
+      width: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+      border-radius: 4px;
+      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+    }
+  </style>
 </head>
+
 <body>
 
-  <header class="navbar">
-    <nav>
-      <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills & Certifications</a></li>
-        <li><a href="#contact">Get in Touch</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills & Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <main>
+  <!-- Home -->
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-split">
-      <div class="hero-left">
-        <div class="photo-ring">
-          <div class="photo-inner"></div>
+  <section id="home">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+      <div style="flex: 1 1 300px; padding: 1rem;">
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 3rem;">Hello, I'm <br><span class="gradient-name">Nandini</span></h1>
+        <p class="aspiring-tagline">Aspiring to turn data into decisions with analytics & AI.</p>
+      </div>
+      <div style="flex: 1 1 300px; padding: 1rem; text-align: center;">
+        <img src="assets/resize_p.jpeg" alt="Profile" style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border-gold);" />
+      </div>
+    </div>
+    <div class="beige-strip">Full-Stack Developer | Analytics | AI & Data Enthusiast</div>
+  </section>
+
+  <!-- About + Education -->
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <div class="container">
+
+      <!-- About (No card) -->
+      <div class="about-section">
+        <p>Originally from Hyderabad, India, and currently based in the U.S., where I’m pursuing a Master’s in Business Analytics and Information Management at Purdue University. I come with 2 years of experience as a full-stack software developer, where I built and maintained enterprise applications that supported global-scale operations.</p>
+        <p>While I’ve always enjoyed solving technical problems, I grew increasingly curious about how those solutions impact business decisions. That curiosity led me to analytics, a space where data, technology, and strategy converge. At Purdue, I’m deepening my skills in data analysis, statistical modeling, and business intelligence, while also exploring the emerging role of AI in shaping smarter systems.</p>
+        <p>I’m particularly excited about applying analytics and AI to solve real-world challenges, and I’m actively working on projects that blend engineering with insight-driven decision-making. As I move forward, I’m aspiring to build a career that sits at the intersection of data, technology, and impact, helping organizations turn complexity into clarity and ideas into action.</p>
+      </div>
+
+      <!-- Education -->
+      <div class="card">
+        <h3 style="font-family: 'Oswald'; color: var(--accent-purple); font-size: 1.5rem;">Education</h3>
+        <ul style="padding-left: 1rem;">
+          <li><img src="assets/purdue_logo.png" class="school-logo" alt="Purdue Logo"/>
+              <strong>Purdue University<br/></li>
+              <em>MS in Business Analytics & Info Management (2024–2025)</em></strong><br/><br/>
+          <li><img src="assets/cbit_logo.jpg" class="school-logo" alt="CBIT Logo"/><strong>Chaitanya Bharathi Institute of Technology<br/></li><em>BE in Computer Science (2017–2021)</em></strong>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="work">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline-track">
+  
+      <div class="timeline-entry">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">May 2025 – Present</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <img src="assets/care.png" class="timeline-logo" alt="Care.com Logo" />
+            <span class="company-name">Care.com, West Lafayette, IN</span>
+          </div>
+          <span class="timeline-role">Software Engineering Intern – Applied AI</span>
+          <ul>
+            <li>Worked on real-world Applied AI solutions integrated into production-facing services.</li>
+            <li>Collaborated across product and engineering teams to deploy ML prototypes.</li>
+          </ul>
         </div>
       </div>
-      <div class="hero-right">
-        <h1>Nandini Priya Devalla</h1>
-        <p>Full-Stack Developer | Business Analytics | AI & Data Enthusiast</p>
-        <a href="#about" class="cta-button">Learn More</a>
+  
+      <div class="timeline-entry">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jan 2025 – Apr 2025</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <img src="assets/indiana_supreme.jpg" class="timeline-logo" alt="Indiana Supreme Court Logo" />
+            <span class="company-name">Indiana Supreme Court, Indianapolis, IN</span>
+          </div>
+          <span class="timeline-role">AI Research & Development Intern</span>
+          <ul>
+            <li>Built training modules for AI adoption in legal operations.</li>
+            <li>Drafted technical documentation and strategic AI recommendations.</li>
+          </ul>
+        </div>
       </div>
-    </section>
+  
+      <div class="timeline-entry">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jul 2021 – Jul 2023</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <img src="assets/gap.png" class="timeline-logo" alt="GAP Inc. Logo" />
+            <span class="company-name">GAP Inc., Hyderabad, India</span>
+          </div>
+          <span class="timeline-role">Software Engineer</span>
+          <ul>
+            <li>Led pricing platform enhancements across GAP Inc. brands.</li>
+            <li>Improved system monitoring, CI/CD pipelines, and API integrations.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="timeline-entry">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jun 2020 – Jul 2020</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <img src="assets/logo_Peacock_Solar.jpg" class="timeline-logo" alt="Peacock Solar Logo" />
+            <span class="company-name">Peacock Solar, Hyderabad, India</span>
+          </div>
+          <span class="timeline-role">Digital Marketing Intern</span>
+          <ul>
+            <li>Boosted web traffic and social engagement with targeted campaigns.</li>
+            <li>Increased lead quality and campaign reach via digital analysis.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="timeline-entry">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Apr 2020 – May 2020</div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <img src="assets/amazon.png" class="timeline-logo" alt="Amazon Logo" />
+            <span class="company-name">Amazon, Hyderabad, India</span>
+          </div>
+          <span class="timeline-role">Campus Mentorship Series Mentee</span>
+          <ul>
+            <li>Built a CRM prototype using PHP, MySQL, and PHP Grid tools.</li>
+            <li>Explored customer pipeline tracking and automation logic.</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+  </section>  
+  
 
-    <!-- Sections -->
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>I’m a full-stack developer with 2+ years of experience building scalable applications and contributing to
-        AI-powered systems. Currently pursuing an MS in Business Analytics & Information Management at Purdue, I focus
-        on applied data science, generative AI, and building meaningful tech products.
-      </p>
-    </section>
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
 
-    <section id="education" class="section">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Purdue University</strong><br />MS in Business Analytics & Information Management (2023–2025)</li>
-        <li><strong>Chaitanya Bharathi Institute of Technology</strong><br />BE in Computer Science (2017–2021)</li>
-      </ul>
-    </section>
+      <!-- Project 1 -->
+      <div class="project-card-container">
+        <div class="project-card-header">
+          <img src="assets/email_icon.png" class="timeline-logo" alt="AI Email Responder (HR) Logo" />
+          <span class="project-title">AI Email Responder (HR)</span>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">Hugging Face</span>
+          <span class="tech-tag">Gmail API</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">PostgreSQL</span>
+        </div>
+        <div class="read-more-toggle" onclick="this.parentElement.classList.toggle('expanded')">
+          Learn more <span>→</span>
+        </div>
+        <div class="read-more-content">
+          <ul>
+            <li>Designed an AI-based system to triage HR emails across categories like leave, payroll, and onboarding.</li>
+            <li>Integrated Gmail API with OAuth for real-time email ingestion and tracking.</li>
+            <li>Used zero-shot classification and semantic similarity for smarter routing.</li>
+            <li>Generated dynamic replies using Zephyr 7b and automated secure SMTP responses.</li>
+            <li>Built full pipeline with React + Flask interface and production-ready logic.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Project 2 -->
+      <div class="project-card-container">
+        <div class="project-card-header">
+          <img src="assets/aldi_icon.png" class="timeline-logo" alt="ALDI Expansion Strategy (Indiana) Logo" />
+          <span class="project-title">ALDI Expansion Strategy (Indiana)</span>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">SafeGraph</span>
+          <span class="tech-tag">Geospatial Analysis</span>
+        </div>
+        <div class="read-more-toggle" onclick="this.parentElement.classList.toggle('expanded')">
+          Learn more <span>→</span>
+        </div>
+        <div class="read-more-content">
+          <ul>
+            <li>Analyzed foot traffic and grocery competition using SafeGraph data.</li>
+            <li>Calculated priority scores using income, dwell time, and market density.</li>
+            <li>Recommended Monrovia and West Lafayette for new ALDI stores.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Project 3 -->
+      <div class="project-card-container">
+        <div class="project-card-header">
+          <img src="assets/azure_icon.png" class="timeline-logo" alt="Retail ETL with Azure Logo" />
+          <span class="project-title">Retail ETL with Azure</span>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Azure Blob</span>
+          <span class="tech-tag">Azure SQL</span>
+          <span class="tech-tag">Data Factory</span>
+          <span class="tech-tag">Function App</span>
+          <span class="tech-tag">T-SQL</span>
+        </div>
+        <div class="read-more-toggle" onclick="this.parentElement.classList.toggle('expanded')">
+          Learn more <span>→</span>
+        </div>
+        <div class="read-more-content">
+          <ul>
+            <li>Built serverless pipeline to ingest legacy CSV data into SQL warehouse.</li>
+            <li>Used Azure Functions to classify and move files by order type.</li>
+            <li>Processed 1,000+ records and verified schema integrity in SQL database.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Project 4 -->
+      <div class="project-card-container">
+        <div class="project-card-header">
+          <img src="assets/ml_icon.png" class="timeline-logo" alt="Diabetes Risk Classifier Logo" />
+          <span class="project-title">Diabetes Risk Classifier</span>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Spark</span>
+          <span class="tech-tag">MLlib</span>
+          <span class="tech-tag">GBT</span>
+          <span class="tech-tag">Random Forest</span>
+          <span class="tech-tag">Parquet</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <div class="read-more-toggle" onclick="this.parentElement.classList.toggle('expanded')">
+          Learn more <span>→</span>
+        </div>
+        <div class="read-more-content">
+          <ul>
+            <li>Used Spark MLlib on CDC BRFSS data to classify diabetes risk.</li>
+            <li>Trained GBT and RF models using features like BMI, age, general health.</li>
+            <li>GBT achieved 84.7% accuracy; supported policy insight through EDA.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Project 5 -->
+      <div class="project-card-container">
+        <div class="project-card-header">
+          <img src="assets/airbnb_icon.png" class="timeline-logo" alt="Airbnb Superhost & ROI Analysis Logo" />
+          <span class="project-title">Airbnb Superhost & ROI Analysis</span>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">SAS EM</span>
+          <span class="tech-tag">Logistic Regression</span>
+          <span class="tech-tag">Random Forest</span>
+          <span class="tech-tag">DoD</span>
+          <span class="tech-tag">Herfindahl Index</span>
+        </div>
+        <div class="read-more-toggle" onclick="this.parentElement.classList.toggle('expanded')">
+          Learn more <span>→</span>
+        </div>
+        <div class="read-more-content">
+          <ul>
+            <li>Modeled Airbnb Superhost status and ROI using listing data from Chicago.</li>
+            <li>Performed difference-in-differences and used Herfindahl Index for competition.</li>
+            <li>Identified high-ROI zip codes and key features that drive occupancy.</li>
+          </ul>
+        </div>
+      </div>
+    </div>    
+  </section>
 
-    <section id="experience" class="section">
-      <h2>Professional Experience</h2>
-      <ul>
-        <li><strong>Indiana Supreme Court – AI R&D Intern</strong><br />Jan 2025 – Apr 2025</li>
-        <li><strong>GAP Inc. – Software Engineer</strong><br />Jul 2021 – Jul 2023</li>
-      </ul>
-    </section>
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div style="text-align: center;">
+      <div>
+        <strong>Technical Skills</strong><br/>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Angular</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">Spring Boot</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Hive</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Spark</span>
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">MLflow</span>
+        <span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">JUnit</span>
+        <span class="skill-tag">Selenium</span>
+        <span class="skill-tag">Agile</span>          
+      </div>
+      <br/>
+      <div>
+        <strong>Soft Skills</strong><br/>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Leadership</span>
+        <span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Problem Solving</span>
+      </div>
+      <br/>
+      <div>
+        <strong>Certifications</strong><br/>
+        <span class="skill-tag">Azure AI Fundamentals (AI-900)</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="skills" class="section">
-      <h2>Skills & Certifications</h2>
-      <p>Java, Spring Boot, Angular, React, SQL, Python, MongoDB, GitHub, MLflow, Spark, Jenkins, Azure, LangChain</p>
-    </section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title">Let’s get in touch!</h2>
+    <div class="contact-icons" style="text-align: center; margin-top: 2rem;">
+      <a href="mailto:ndevalla@purdue.edu"><img src="assets/outlook.png" alt="Email"></a>
+      <a href="mailto:nandinidevalla1@gmail.com"><img src="assets/email.png" alt="Email"></a>
+      <a href="https://github.com/nandinidevalla" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
+      <a href="https://linkedin.com/in/nandini-devalla" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-      <h2>Get in Touch</h2>
-      <p>Email: <a href="mailto:ndevalla@purdue.edu">ndevalla@purdue.edu</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/nandini-devalla" target="_blank">nandini-devalla</a></p>
-    </section>
-
-  </main>
-
-  <script>
-    // Remove #home on load if present
-    if (window.location.hash === "#home") {
-      history.replaceState(null, "", window.location.pathname);
-    }
-  </script>
-
+  <footer>
+    <span class="footer-name">Nandini Priya Devalla</span>
+    <p>&copy; 2025 Nandini Priya Devalla. All rights reserved.</p>
+  </footer>
+  
+  
 </body>
 </html>
